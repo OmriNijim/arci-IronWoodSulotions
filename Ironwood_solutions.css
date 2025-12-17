@@ -1,192 +1,208 @@
 /* Global Styling */
 :root {
-    --primary-color: #ffffff;
-    --accent-color: #d32f2f; /* Red accent for buttons/active states */
-    --bg-dark: #121212;
-    --font-heading: 'Oswald', sans-serif;
-    --font-body: 'Roboto', sans-serif;
+  --primary-color: #ffffff;
+  --accent-color: #d32f2f;
+  /* Red accent for buttons/active states */
+  --bg-dark: #121212;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--primary-color);
-    font-family: var(--font-body);
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  background-color: var(--bg-dark);
+  color: var(--primary-color);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* Navigation Bar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent; /* Transparent for overlay effect */
-    padding: 20px 50px;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  /* Transparent for overlay effect */
+  padding: 20px 50px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
 .logo-container .logo {
-    height: 40px; /* Adjust based on logo file */
-    width: auto;
-    filter: brightness(0) invert(1); /* Make logo white if it's not already */
+  height: 70px;
+  /* Adjust based on logo file */
+  width: auto;
+  filter: brightness(0) invert(1);
+  /* Make logo white if it's not already */
 }
 
 .nav-links {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/cnc-machining-manufacturer-banner.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    border-bottom: 5px solid var(--accent-color);
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/cnc-machining-manufacturer-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-bottom: 5px solid var(--accent-color);
 }
 
 .hero-content {
-    animation: fadeIn 1.5s ease-out;
+  animation: fadeIn 1.5s ease-out;
 }
 
 .hero-title {
-    font-family: var(--font-heading);
-    font-size: 10rem;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 5px;
-    line-height: 1;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+  font-family: var(--font-heading);
+  font-size: 10rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 5px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
 }
 
 .cta-button {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: 15px 40px;
-    border: 2px solid var(--accent-color);
-    border-radius: 30px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    background-color: rgba(0,0,0,0.4);
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 15px 40px;
+  border: 2px solid var(--accent-color);
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .cta-button:hover {
-    background-color: var(--accent-color);
-    box-shadow: 0 0 20px rgba(211, 47, 47, 0.5);
+  background-color: var(--accent-color);
+  box-shadow: 0 0 20px rgba(211, 47, 47, 0.5);
 }
 
 /* Services Section */
 .services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 500px;
 }
 
 .service-card {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  cursor: pointer;
 }
 
 .service-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    filter: grayscale(30%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: grayscale(30%);
 }
 
 .service-card:hover .service-img {
-    transform: scale(1.1);
-    filter: grayscale(0%);
+  transform: scale(1.1);
+  filter: grayscale(0%);
 }
 
 .service-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center text vertically */
-    padding: 20px;
-    box-sizing: border-box;
-    transition: background 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Center text vertically */
+  padding: 20px;
+  box-sizing: border-box;
+  transition: background 0.3s;
 }
 
 .service-card:hover .service-overlay {
-    background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .service-overlay h2 {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    text-transform: uppercase;
-    margin: 0;
-    text-shadow: 2px 2px 5px black;
-    text-align: center; /* Center text horizontally */
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 2px 2px 5px black;
+  text-align: center;
+  /* Center text horizontally */
 }
 
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 10px 20px;
-    }
-    .hero-title {
-        font-size: 4rem;
-    }
-    .services {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-    .service-card {
-        height: 300px;
-    }
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .service-card {
+    height: 300px;
+  }
 }
