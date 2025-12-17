@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ironwood Solutions - Order Machine</title>
+    <link rel="stylesheet" href="Ironwood_solutions.css">
+    <script src="Ironwood_solutions.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/newlogo.png" alt="Ironwood Solutions Logo" class="logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="order_machine.html" class="active">Order</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h3>Request a Machine</h3>
+
+        <form onsubmit="return generateText()">
+            <table class="form-table">
+                <tr>
+                    <td>Full Name:</td>
+                    <td><input type="text" id="fname" required /></td>
+                </tr>
+
+                <tr>
+                    <td>Phone:</td>
+                    <td class="phone-container">
+                        <select id="prefixes">
+                            <option value="050">050</option>
+                            <option value="052">052</option>
+                            <option value="053">053</option>
+                            <option value="054">054</option>
+                        </select>
+
+                        <input type="text" id="phone" maxlength="7" pattern="\d{7}"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" id="email" required /></td>
+                </tr>
+
+                <tr>
+                    <td>Machine Type:</td>
+                    <td>
+                        <select id="machineType">
+                            <option value="">Select</option>
+                            <option value="CNC Wood Router">CNC Wood Router</option>
+                            <option value="Metal CNC Lathe">Metal CNC Lathe</option>
+                            <option value="Edge Banding Machine">Edge Banding Machine</option>
+                            <option value="Iron Bending Machine">Iron Bending Machine</option>
+                            <option value="Laser Cutting Machine">Laser Cutter</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Message:</td>
+                    <td><textarea id="msg" rows="4" cols="35"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>Client Type:</td>
+                    <td id="cType-radio">
+                        <input type="radio" name="cType" value="Private" required /> Private
+                        <input type="radio" name="cType" value="Factory" /> Factory
+                        <input type="radio" name="cType" value="Dealer" /> Dealer
+                    </td>
+                </tr>
+            </table>
+
+            <br />
+            <div class="form-buttons">
+                <input type="submit" id="send" value="Send" />
+                <input type="button" id="clear" value="Clear" onclick="clearForm()" />
+            </div>
+        </form>
+
+        <h3>Client Request Summary:</h3>
+        <p id="res"></p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+/* רקע כללי */
+body {
+  background-color: #e9e9e9;
+  text-align: center;
+  /* justify-self: center; // This is not standard on body usually, removing for better layout control */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* Clear default padding */
+  background-image: url(images/background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  /* Ensure full height */
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Semi-transparent black */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo-container .logo {
+  height: 50px;
+  /* Adjust as needed */
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #2d89ef;
+  /* Match existing blue */
+}
+
+.nav-links a.active {
+  color: #2d89ef;
+  border-bottom: 2px solid #2d89ef;
+}
+
+/* --- Layout Container --- */
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Slight overlay for readability if needed, or transparent */
+  border-radius: 8px;
+}
+
+/* כותרות */
+h1 {
+  color: #333;
+  /* Dark text for contrast if on light background, or white if on dark */
+  text-shadow: 1px 1px 2px white;
+  /* Help readability on bg image */
+}
+
+h3 {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* טופס */
+form {
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 600px;
+  margin: 0 auto;
+  /* Center the form */
+  padding: 20px;
+  box-sizing: border-box;
+  /* Include padding in width */
+  border-radius: 8px;
+}
+
+/* טבלת הטופס */
+form table {
+  width: 100%;
+}
+
+/* תאים בטופס */
+form td {
+  font-size: 14px;
+  padding: 5px;
+  /* Add breathing room */
+}
+
+/* שדות */
+input[type="text"],
+textarea,
+select,
+input[type="email"] {
+  width: 95%;
+  border: 1px solid #888;
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* אזור סיכום */
+#res {
+  background-color: white;
+  border: 1px solid #aaa;
+  width: 580px;
+  min-height: 30px;
+  margin: 10px auto;
+  /* Center it */
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* טבלה של הקטלוג */
+.catalog-table {
+  background-color: white;
+  border: 1px solid #333;
+  width: 100%;
+  border-collapse: collapse;
+  /* Cleaner borders */
+}
+
+.catalog-table th,
+.catalog-table td {
+  border: 1px solid #333;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.phone-container {
+  display: flex;
+  text-align: left;
+  /* margin-left: 10px; removed specific margin to let flex gap handle it */
+  align-items: center;
+  gap: 8px;
+}
+
+#prefixes {
+  width: 60px;
+  /* Slightly wider */
+}
+
+#phone {
+  flex-grow: 1;
+  /* Take remaining space */
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#send {
+  background-color: #2d89ef;
+  color: white;
+  width: 100px;
+  border: 1px solid #555;
+  transition: all 0.75s ease;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#send:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+#send:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
+#clear {
+  background-color: gray;
+  color: white;
+  width: 100px;
+  border: 1px solid #555;
+  transition: all 0.75s ease;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#clear:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+#clear:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+.myImg {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s;
+  /* smooth animation */
+  object-fit: contain;
+  /* Prevent distortion */
+}
+
+.myImg:hover {
+  transform: scale(1.5);
+}
+
+#machine-abbr {
+  text-decoration: underline;
+  cursor: help;
+}
+
+#cType-radio {
+  text-align: left;
+  /* Align radios better */
+  padding-left: 10px;
+}
