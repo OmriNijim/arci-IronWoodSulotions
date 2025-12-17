@@ -1,23 +1,32 @@
 <!DOCTYPE html>
+<!-- Specifies the document type as HTML5 -->
 <html lang="en">
+<!-- The root element of the HTML page, setting the language to English -->
 
 <head>
+    <!-- Meta tags for character set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page shown in the browser tab -->
     <title>Ironwood Solutions - Order Machine</title>
+    <!-- Link to the external CSS file for styling -->
     <link rel="stylesheet" href="Ironwood_solutions.css">
+    <!-- Link to the external JavaScript file for functionality -->
     <script src="Ironwood_solutions.js"></script>
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar Section -->
+    <!-- Contains the logo and navigation links -->
     <nav class="navbar">
         <div class="logo-container">
+            <!-- Logo image linking back to the home page -->
             <a href="index.html">
                 <img src="images/newlogo.png" alt="Ironwood Solutions Logo" class="logo">
             </a>
         </div>
+        <!-- Navigation links to other pages -->
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="order_machine.html" class="active">Order</a>
@@ -27,17 +36,21 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Main Content Section -->
+    <!-- Contains the order form -->
     <div class="container">
         <h3>Request a Machine</h3>
 
+        <!-- Form submission is handled by the generateText function. return false prevents page reload. -->
         <form onsubmit="return generateText()">
             <table class="form-table">
+                <!-- Full Name Input -->
                 <tr>
                     <td>Full Name:</td>
                     <td><input type="text" id="fname" required /></td>
                 </tr>
 
+                <!-- Phone Number Input with Prefix dropdown -->
                 <tr>
                     <td>Phone:</td>
                     <td class="phone-container">
@@ -48,16 +61,19 @@
                             <option value="054">054</option>
                         </select>
 
+                        <!-- Limits input to numbers only and max 7 digits -->
                         <input type="text" id="phone" maxlength="7" pattern="\d{7}"
                             oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
                     </td>
                 </tr>
 
+                <!-- Email Input -->
                 <tr>
                     <td>Email:</td>
                     <td><input type="email" id="email" required /></td>
                 </tr>
 
+                <!-- Machine Type Dropdown Selection -->
                 <tr>
                     <td>Machine Type:</td>
                     <td>
@@ -72,11 +88,13 @@
                     </td>
                 </tr>
 
+                <!-- Message Textarea -->
                 <tr>
                     <td>Message:</td>
                     <td><textarea id="msg" rows="4" cols="35"></textarea></td>
                 </tr>
 
+                <!-- Client Type Radio Buttons -->
                 <tr>
                     <td>Client Type:</td>
                     <td id="cType-radio">
@@ -88,12 +106,14 @@
             </table>
 
             <br />
+            <!-- Form Action Buttons -->
             <div class="form-buttons">
                 <input type="submit" id="send" value="Send" />
                 <input type="button" id="clear" value="Clear" onclick="clearForm()" />
             </div>
         </form>
 
+        <!-- Container for displaying submission result -->
         <h3>Client Request Summary:</h3>
         <p id="res"></p>
     </div>
