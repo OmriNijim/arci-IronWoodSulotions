@@ -1,69 +1,78 @@
-// Function to generate and display the order summary based on user input
-function generateText() {
+﻿function generateText() {
+    var name = document.getElementById("fname").value;
+    var prefix = document.getElementById("prefixes").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var msg = document.getElementById("msg").value;
+    var machineType = document.getElementById("machineType").value;
 
-  // Retrieve values from the input fields
-  var name = document.getElementById("fname").value;
-  var prefix = document.getElementById("prefixes").value;
-  var phone = document.getElementById("phone").value;
-  var email = document.getElementById("email").value;
-  var msg = document.getElementById("msg").value;
-  var machineType = document.getElementById("machineType").value;
-
-  // Retrieve the selected client type radio button
-  var cTypeArr = document.getElementsByName("cType");
-  var cType = [];
-  for (var i = 0; i < cTypeArr.length; i++) {
-    if (cTypeArr[i].checked) {
-      cType.push(cTypeArr[i].value);
+    var cTypeArr = document.getElementsByName("cType");
+    var cType = [];
+    for (var i = 0; i < cTypeArr.length; i++) {
+        if (cTypeArr[i].checked) cType.push(cTypeArr[i].value);
     }
-  }
 
-  // Initialize variable to hold error messages
-  var alertMsg = "";
+    // build the order object
+    var order = {
+        fname: name,
+        prefixes: prefix,
+        phone: prefix + phone,
+        email: email,
+        msg: msg,
+        machineType: machineType,
+        cType: cType
+    };
+    OrderLogic.addOrder(order);
+    // validation you already wanted
+    var alertMsg = "";
+    if (name === "") alertMsg += "Please enter your name.\n";
+    if (email === "") alertMsg += "Please enter your email.\n";
+    if (msg === "") alertMsg += "Please enter your message.\n";
+    if (machineType === "") alertMsg += "Please select a machine.\n";
+    if (cType.length === 0) alertMsg += "Please select Client Type.\n";
 
-  // Validation checks: Ensure all required fields are filled
-  if (name == "") alertMsg += "Please enter your name.\n";
-  if (email == "") alertMsg += "Please enter your email.\n";
-  if (msg == "") alertMsg += "Please enter your message.\n";
-  if (machineType == "") alertMsg += "Please select a machine.\n";
-  if (cTypeArr.length == 0) alertMsg += "Please select Client Type.\n";
+    if (alertMsg !== "") {
+        alert(alertMsg);
+        document.getElementById("res").innerHTML = "";
+        return false;
+    }
 
-  // If there are validation errors, display them and stop function execution
-  if (alertMsg != "") {
-    document.getElementById("res").innerHTML = ""; // Clear previous results
-    alert(alertMsg); // Show alert popup
-    return false; // Prevent form submission
-  }
+ 
 
-  // If validation passes, construct the success message
-  var output = "Hello " + name + "!<br>";
-  output += "we appreciate your instrest in " + machineType + " Machine.<br>";
-  output += "Our team will contact you shortly with further details";
+    var output = "Hello " + name + "!<br>";
+    output += "We appreciate your interest in <b>" + machineType + "</b> machine.<br>";
+    output += "Message:<br>" + msg + "<br>";
+    output += "Client type: " + cType[0] + "<br>";
+    output += "Phone: " + prefix + phone + "<br><br>";
+    output += "<b>Saved orders count:</b> " + LocalData.orders.length;
 
-  // Display the success message in the 'res' element
-  document.getElementById("res").innerHTML = output;
+    document.getElementById("res").innerHTML = output;
+    return false;
+    
 
-  return false; // Prevent actual form submission (page reload) for this demo
+    // print + prove saved
+    var output = "Hello " + name + "!<br>";
+    output += "We appreciate your interest in <b>" + machineType + "</b> machine.<br>";
+    output += "Message:<br>" + msg + "<br>";
+    output += "Client type: " + cType[0] + "<br>";
+    output += "Phone: " + prefix + phone + "<br><br>";
+    output += "<b>Saved orders count:</b> " + LocalData.orders.length;
+
+    document.getElementById("res").innerHTML = output;
+    return false;
 }
 
-// Function to clear all input fields in the form
-function clearForm() {
-  document.getElementById("fname").value = "";
-  document.getElementById("phone").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("msg").value = "";
-  document.getElementById("machineType").value = "";
+// DO NOT TOUCH (as you asked)
+function check() {
+    var prefix = document.getElementById("prefixes").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
 
-  // Reset dropdowns to their first option (default)
-  document.getElementById("machineType").selectedIndex = 0;
-  document.getElementById("prefixes").selectedIndex = 0;
-
-  // Uncheck all radio buttons
-  var cTypeArr = document.getElementsByName("cType");
-  for (var i = 0; i < cTypeArr.length; i++) {
-    cTypeArr[i].checked = false;
-  }
-
-  // Clear the result message area
-  document.getElementById("res").innerHTML = "";
+    var agents = {
+        prefixes: prefix,
+        phone: prefix + phone,
+        email: email,
+        password: password
+    };
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- Specifies the document type as HTML5 -->
 <html lang="en">
 <!-- The root element of the HTML page, setting the language to English -->
@@ -31,28 +31,18 @@
         <!-- Navigation links to other pages -->
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="order_machine.html" class="active">Order</a>
+            <a href="order_machine.html">Order</a>
             <a href="catalog.html">Catalog</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="worker.html">worker</a>
+            <a href="worker.html" class="active">worker</a>
         </div>
     </nav>
-
-    <!-- Main Content Section -->
-    <!-- Contains the order form -->
-    <div class="container">
-        <h3>Request a Machine</h3>
-
-        <!-- Form submission is handled by the generateText function. return false prevents page reload. -->
+    <div class="info">
+        <h1>Sign In</h1>
         <form onsubmit="return generateText()">
-            <table class="form-table">
-                <!-- Full Name Input -->
-                <tr>
-                    <td>Full Name:</td>
-                    <td><input type="text" id="fname" required /></td>
-                </tr>
-
+            <table class="form-table1">
+              
                 <!-- Phone Number Input with Prefix dropdown -->
                 <tr>
                     <td>Phone:</td>
@@ -75,51 +65,19 @@
                     <td>Email:</td>
                     <td><input type="email" id="email" required /></td>
                 </tr>
-
-                <!-- Machine Type Dropdown Selection -->
                 <tr>
-                    <td>Machine Type:</td>
-                    <td>
-                        <select id="machineType">
-                            <option value="">Select</option>
-                            <option value="CNC Wood Router">CNC Wood Router</option>
-                            <option value="Metal CNC Lathe">Metal CNC Lathe</option>
-                            <option value="Edge Banding Machine">Edge Banding Machine</option>
-                            <option value="Iron Bending Machine">Iron Bending Machine</option>
-                            <option value="Laser Cutting Machine">Laser Cutter</option>
-                        </select>
-                    </td>
+                    <td>password:</td>
+                    <td><input type="password" id="password" required /></td>
                 </tr>
+           
 
-                <!-- Message Textarea -->
-                <tr>
-                    <td>Message:</td>
-                    <td><textarea id="msg" rows="4" cols="35"></textarea></td>
-                </tr>
-
-                <!-- Client Type Radio Buttons -->
-                <tr>
-                    <td>Client Type:</td>
-                    <td id="cType-radio">
-                        <input type="radio" name="cType" value="Private" required /> Private
-                        <input type="radio" name="cType" value="Factory" /> Factory
-                        <input type="radio" name="cType" value="Dealer" /> Dealer
-                    </td>
-                </tr>
-            </table>
-
-            <br />
-            <!-- Form Action Buttons -->
-             <div class="form-buttons">
-           <input type="submit" id="send" value="Send" />
-            <input type="button" id="clear" value="Clear" onclick="clearForm()" />
-        </div>
+            <tr>
+                <td><input type="submit" id="check" value="check" onclick="check()"/></td>
+               <td> <input type="submit" id="clear" value="Clear" onclick="clearForm1()" /></td>
+            </tr>
+            <table/>
         </form>
-        <p id="res"></p>
-        <!-- Container for displaying submission result -->
-
-    </div>
+        <h3>if you are new worker send Email to gaithmostafa16@gmail.com </br> so we can save your info into our system.</h3>
 
 </body>
-
 </html>
