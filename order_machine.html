@@ -11,6 +11,9 @@
     <title>Ironwood Solutions - Order Machine</title>
     <!-- Link to the external CSS file for styling -->
     <link rel="stylesheet" href="Ironwood_solutions.css">
+    <!-- Link to Google Fonts for custom typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+          rel="stylesheet">
     <!-- Link to the external JavaScript file for functionality -->
     <script src="Script1.js"></script>
     <script src="logicorderLogic.js"></script>
@@ -35,7 +38,7 @@
             <a href="catalog.html">Catalog</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="worker.html">worker</a>
+            <a href="worker.html">Worker</a>
         </div>
     </nav>
 
@@ -43,44 +46,52 @@
     <!-- Contains the order form -->
     <div class="container">
         <h3>Request a Machine</h3>
-
+        
         <!-- Form submission is handled by the generateText function. return false prevents page reload. -->
-        <form onsubmit="return generateText()">
+        <form id="orderForm">
+            <input type="hidden" name="access_key" value="51596e67-a272-450c-aea4-daa4a29b30be">
+
             <table class="form-table">
                 <!-- Full Name Input -->
                 <tr>
                     <td>Full Name:</td>
-                    <td><input type="text" id="fname" required /></td>
+                    <td><input type="text" id="fname" name="Full Name" required /></td>
                 </tr>
 
                 <!-- Phone Number Input with Prefix dropdown -->
                 <tr>
                     <td>Phone:</td>
                     <td class="phone-container">
-                        <select id="prefixes">
+                        <select id="prefixes" name="Prefix">
                             <option value="050">050</option>
                             <option value="052">052</option>
                             <option value="053">053</option>
                             <option value="054">054</option>
                         </select>
 
-                        <!-- Limits input to numbers only and max 7 digits -->
-                        <input type="text" id="phone" maxlength="7" pattern="\d{7}"
-                               oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
+                        <input
+                            type="text"
+                            id="phone"
+                            name="Phone"
+                            maxlength="7"
+                            pattern="\d{7}"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            required
+                        />
                     </td>
                 </tr>
 
                 <!-- Email Input -->
                 <tr>
                     <td>Email:</td>
-                    <td><input type="email" id="email" required /></td>
+                    <td><input type="email" id="email" name="email" required /></td>
                 </tr>
 
                 <!-- Machine Type Dropdown Selection -->
                 <tr>
                     <td>Machine Type:</td>
                     <td>
-                        <select id="machineType">
+                        <select id="machineType" name="Machine Type">
                             <option value="">Select</option>
                             <option value="CNC Wood Router">CNC Wood Router</option>
                             <option value="Metal CNC Lathe">Metal CNC Lathe</option>
@@ -94,29 +105,31 @@
                 <!-- Message Textarea -->
                 <tr>
                     <td>Message:</td>
-                    <td><textarea id="msg" rows="4" cols="35"></textarea></td>
+                    <td><textarea id="msg" name="Message" rows="4" cols="35"></textarea></td>
                 </tr>
 
                 <!-- Client Type Radio Buttons -->
                 <tr>
                     <td>Client Type:</td>
                     <td id="cType-radio">
-                        <input type="radio" name="cType" value="Private" required /> Private
-                        <input type="radio" name="cType" value="Factory" /> Factory
-                        <input type="radio" name="cType" value="Dealer" /> Dealer
+                        <input type="radio" name="Client Type" value="Private" required /> Private
+                        <input type="radio" name="Client Type" value="Factory" /> Factory
+                        <input type="radio" name="Client Type" value="Dealer" /> Dealer
                     </td>
                 </tr>
             </table>
 
             <br />
             <!-- Form Action Buttons -->
-             <div class="form-buttons">
-           <input type="submit" id="send" value="Send" />
-            <input type="button" id="clear" value="Clear" onclick="clearForm()" />
-        </div>
+            <div class="form-buttons">
+                <input type="submit" id="send" value="Send" />
+                <input type="button" id="clear" value="Clear" onclick="clearForm()" />
+            </div>
         </form>
+
+        <h3>Client Request Summary:</h3>
         <p id="res"></p>
-        <!-- Container for displaying submission result -->
+
 
     </div>
 

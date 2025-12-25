@@ -1,175 +1,139 @@
 <!DOCTYPE html>
-<!-- Specifies the document type as HTML5 -->
 <html lang="en">
-<!-- The root element of the HTML page, setting the language to English -->
 
 <head>
-    <!-- Meta tags for character set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the page shown in the browser tab -->
     <title>Ironwood Solutions - Catalog</title>
-    <!-- Link to the external CSS file for styling -->
+    <!-- Main CSS -->
     <link rel="stylesheet" href="Ironwood_solutions.css">
-    <!-- Link to the external JavaScript file for functionality -->
-    <script src="Script1.js"></script>
-    <script src="logicorderLogic.js"></script>
+    <!-- Link to Google Fonts for custom typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+          rel="stylesheet">
+    <!-- JS (optional for this page) -->
     <script src="Ironwood_solutions.js"></script>
 </head>
 
 <body>
 
-    <!-- Navigation Bar Section -->
-    <!-- Contains the logo and navigation links -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo-container">
-            <!-- Logo image linking back to the home page -->
             <a href="index.html">
                 <img src="images/newlogo.png" alt="Ironwood Solutions Logo" class="logo">
             </a>
         </div>
-        <!-- Navigation links to other pages -->
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="order_machine.html">Order</a>
             <a href="catalog.html" class="active">Catalog</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="worker.html">worker</a>
-
+            <a href="worker.html">Worker</a>
         </div>
     </nav>
 
-    <!-- Main Content Section -->
-    <!-- Displays a catalog of available machines in a table format -->
+    <!-- Main Content -->
     <div class="container">
+
         <h3>Machine Catalog</h3>
 
-        <!-- Table structure for machine listing -->
-        <table class="catalog-table">
-            <!-- Table Header Row -->
-            <tr>
-                <th>Machine</th>
-                <th>Image</th>
-                <th>Power</th>
-                <th>Price</th>
-            </tr>
-            <!-- Table Row 1: CNC Wood Router -->
-            <tr>
-                <td>
-                    <!-- Description tooltip using abbr tag -->
-                    <abbr
-                        title="A CNC Router is a computer-controlled machine used to cut, carve, and shape materials like wood, plastic, and aluminum with high precision.">
+        <!-- ===== MACHINE LIST ===== -->
+        <ul class="machine-list">
+
+            <!-- CNC Wood Router -->
+            <li class="machine-item">
+                <h4>
+                    <abbr title="A CNC Router is a computer-controlled machine used to cut, carve, and shape materials like wood, plastic, and aluminum with high precision.">
                         CNC Wood Router
                     </abbr>
-                </td>
-                <td>
-                    <img src="images/CNC ROUTER.png.webp" class="myImg" alt="CNC Router" />
-                </td>
-                <td>3.0 kW</td>
-                <td>22,000</td>
-            </tr>
-            <!-- Table Row 2: Iron Bending Machine -->
-            <tr>
-                <td>
-                    <abbr
-                        title="An Iron Bending Machine is a mechanical or hydraulic tool used to bend and shape metal bars, pipes, or sheets with accuracy and consistency.">
+                </h4>
+
+                <img src="images/CNC ROUTER.png.webp" class="myImg" alt="CNC Router">
+
+                <dl class="machine-details">
+                    <dt>Power</dt>
+                    <dd>3.0 kW</dd>
+
+                    <dt>Price</dt>
+                    <dd>22,000</dd>
+
+                    <dt>CNC Router</dt>
+                    <dd>Used for cutting, carving, and shaping wood and soft metals with high precision.</dd>
+                </dl>
+            </li>
+
+            <!-- Iron Bending Machine -->
+            <li class="machine-item">
+                <h4>
+                    <abbr title="An Iron Bending Machine is a mechanical or hydraulic tool used to bend and shape metal bars, pipes, or sheets with accuracy and consistency.">
                         Iron Bending Machine
                     </abbr>
-                </td>
-                <td>
-                    <img src="images/ironbending.jpg" class="myImg" alt="ironbending" />
-                </td>
-                <td>Hydraulic</td>
-                <td>35,000</td>
-            </tr>
-            <!-- Table Row 3: Laser Cutter -->
-            <tr>
-                <td>
-                    <abbr
-                        title="A Laser Cutter is a machine that uses a focused laser beam to cut or engrave materials like wood, acrylic, plastic, and metal with high precision.">
+                </h4>
+
+                <img src="images/ironbending.jpg" class="myImg" alt="Iron Bending Machine">
+
+                <dl class="machine-details">
+                    <dt>Power</dt>
+                    <dd>Hydraulic</dd>
+
+                    <dt>Price</dt>
+                    <dd>35,000</dd>
+
+                    <dt>Iron Bending Machine</dt>
+                    <dd>Designed to bend and shape metal bars and sheets efficiently.</dd>
+                </dl>
+            </li>
+
+            <!-- Laser Cutter -->
+            <li class="machine-item">
+                <h4>
+                    <abbr title="A Laser Cutter is a machine that uses a focused laser beam to cut or engrave materials like wood, acrylic, plastic, and metal with high precision.">
                         Laser Cutter
                     </abbr>
-                </td>
-                <td>
-                    <img src="images/LS1390-Pro-Laser.jpg" class="myImg" alt="Pro Laser" />
-                </td>
-                <td>60W CO2</td>
-                <td>18,500</td>
-            </tr>
-            <!-- Table Row 4: Edge Banding Machine -->
-            <tr>
-                <td>
-                    <abbr
-                        title="An Edge Banding Machine is used to apply edge tape to the raw edges of wood panels, creating a clean and durable finish for furniture.">
-                        Edge Banding Machine
-                    </abbr>
-                </td>
-                <td>
-                    <img src="images/EDGEBending.webp" class="myImg" alt="Edge Banding Machine" />
-                </td>
-                <td>5.5 kW</td>
-                <td>15,000</td>
-            </tr>
-            <!-- Table Row 5: CNC Lathe -->
-            <tr>
-                <td>
-                    <abbr
-                        title="A CNC Lathe rotates a workpiece on an axis to perform various operations such as cutting, sanding, knurling, drilling, deformation, facing, and turning.">
-                        CNC Lathe
-                    </abbr>
-                </td>
-                <td>
-                    <img src="images/cnclathe.jpg" class="myImg" alt="CNC Lathe" />
-                </td>
-                <td>10 kW</td>
-                <td>45,000</td>
-            </tr>
-            <!-- Table Row 6: Hydraulic Press -->
-            <tr>
-                <td>
-                    <abbr
-                        title="A Hydraulic Press is a machine press using a hydraulic cylinder to generate a compressive force, used for operations such as forging, clinching, molding, punching, and deep drawing.">
-                        Hydraulic Press
-                    </abbr>
-                </td>
-                <td>
-                    <img src="images/hydraulic-press-machine.jpg" class="myImg" alt="Hydraulic Press" />
-                </td>
-                <td>50 Ton</td>
-                <td>28,000</td>
-            </tr>
-            <!-- Table Row 7: Laser Welding Machine -->
-            <tr>
-                <td>
-                    <abbr
-                        title="A Laser Welding Machine uses a high-energy laser beam to join metal parts with high precision and speed, often used in automotive and aerospace industries.">
-                        Laser Welding Machine
-                    </abbr>
-                </td>
-                <td>
-                    <img src="images/laserweld.jpeg" class="myImg" alt="Laser Welding Machine" />
-                </td>
-                <td>2000W</td>
-                <td>32,000</td>
-            </tr>
-            <!-- Table Row 8: Panel Saw -->
-            <tr>
-                <td>
-                    <abbr
-                        title="A Panel Saw is a machine used to cut large sheets of wood or other materials into smaller sections with high accuracy.">
-                        Panel Saw
-                    </abbr>
-                </td>
-                <td>
-                    <img src="images/panelSAW.webp" class="myImg" alt="Panel Saw" />
-                </td>
-                <td>4.0 kW</td>
-                <td>12,000</td>
-            </tr>
-        </table>
+                </h4>
+
+                <img src="images/LS1390-Pro-Laser.jpg" class="myImg" alt="Laser Cutter">
+
+                <dl class="machine-details">
+                    <dt>Power</dt>
+                    <dd>60W CO2</dd>
+
+                    <dt>Price</dt>
+                    <dd>18,500</dd>
+
+                    <dt>Laser Cutter</dt>
+                    <dd>Uses a focused laser beam for accurate cutting and engraving.</dd>
+                </dl>
+            </li>
+
+        </ul>
+
+        <h3>Machine Demonstration Video</h3>
+        <p>Watch a demonstration of our CNC and industrial machinery in action.</p>
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/nPT6MVh_OP8?si=cBF4SFDa4GoIpnxJ" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/ZgU621jdM7k?si=-3kkyrgJJdXJmJnA" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+
     </div>
 
 </body>
-
 </html>

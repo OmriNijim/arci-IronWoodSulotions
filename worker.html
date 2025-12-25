@@ -11,6 +11,9 @@
     <title>Ironwood Solutions - Order Machine</title>
     <!-- Link to the external CSS file for styling -->
     <link rel="stylesheet" href="Ironwood_solutions.css">
+    <!-- Link to Google Fonts for custom typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+          rel="stylesheet">
     <!-- Link to the external JavaScript file for functionality -->
     <script src="Script1.js"></script>
     <script src="logicorderLogic.js"></script>
@@ -35,14 +38,14 @@
             <a href="catalog.html">Catalog</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="worker.html" class="active">worker</a>
+            <a href="worker.html" class="active">Worker</a>
         </div>
     </nav>
     <div class="info">
         <h1>Sign In</h1>
-        <form onsubmit="return generateText()">
+
+        <form onsubmit="return check()">
             <table class="form-table1">
-              
                 <!-- Phone Number Input with Prefix dropdown -->
                 <tr>
                     <td>Phone:</td>
@@ -54,9 +57,14 @@
                             <option value="054">054</option>
                         </select>
 
-                        <!-- Limits input to numbers only and max 7 digits -->
-                        <input type="text" id="phone" maxlength="7" pattern="\d{7}"
-                               oninput="this.value = this.value.replace(/[^0-9]/g, '')" required />
+                        <input
+                            type="text"
+                            id="phone"
+                            maxlength="7"
+                            pattern="\d{7}"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            required
+                        />
                     </td>
                 </tr>
 
@@ -65,19 +73,31 @@
                     <td>Email:</td>
                     <td><input type="email" id="email" required /></td>
                 </tr>
+
+                <!-- Password -->
                 <tr>
-                    <td>password:</td>
+                    <td>Password:</td>
                     <td><input type="password" id="password" required /></td>
                 </tr>
-           
 
-            <tr>
-                <td><input type="submit" id="check" value="check" onclick="check()"/></td>
-               <td> <input type="submit" id="clear" value="Clear" onclick="clearForm1()" /></td>
-            </tr>
-            <table/>
+                <!-- Buttons -->
+                <tr>
+                    <td>
+                        <input type="submit" id="check" value="Check" />
+                    </td>
+                    <td>
+                        <input type="button" id="clear" value="Clear" onclick="clearForm1()" />
+                    </td>
+                </tr>
+            </table>
         </form>
-        <h3>if you are new worker send Email to gaithmostafa16@gmail.com </br> so we can save your info into our system.</h3>
+
+        <h3>
+            If you are a new worker, send an email to
+            gaithmostafa16@gmail.com so we can save your info into our system.
+        </h3>
+    </div>
+
 
 </body>
 </html>
