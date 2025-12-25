@@ -250,16 +250,60 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 .form-table1 {
-    margin: 0 auto;
+  margin: 0 auto;
 }
+
 .info h1 {
-    color: dimgrey;
-    margin: 80px;
-    text-align: center;
-    font-size: 40px;
-         }
+  color: dimgrey;
+  margin: 80px;
+  text-align: center;
+  font-size: 40px;
+}
+
 .info h3 {
-    margin: 500px;
-    margin-left: 80px;
+  margin: 500px;
+  margin-left: 80px;
+}
+
+/* Catalog Styling */
+.myImg {
+  width: 250px;
+  /* Fixed width for consistency */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 8px;
+  /* Slight rounding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /* Subtle shadow for depth */
+  display: block;
+  margin: 0 auto;
+  /* Center image in cell */
+}
+
+.catalog-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  /* Slight background for readability */
+}
+
+.catalog-table th,
+.catalog-table td {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.catalog-table th {
+  background-color: var(--accent-color);
+  color: white;
+  text-transform: uppercase;
+}
+
+.catalog-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Highlight row on hover */
 }
